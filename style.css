@@ -765,7 +765,23 @@ footer h5 {
 /* End of Footer Section */
 
 
-
+/* Key Frames */
+@keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animated-number {
+    opacity: 0;
+    animation: countUp 1s ease-in-out forwards;
+  }
+/* End of Key Frames */  
 
 /* Media Queries */
 @media screen and (min-width: 1300px) {
@@ -889,6 +905,14 @@ footer h5 {
         left: -30px;
     }
 
+    .plus h1::after {
+        content: "+";
+        font-weight: 700;
+        display: inline-block;
+        margin-right: 5px;
+      }
+      
+
     .subscribe-content {
         justify-content: space-between;
         text-align: unset;
@@ -903,3 +927,4 @@ footer h5 {
     }
 }
 /* End of Media Queries */
+

@@ -5,7 +5,6 @@ function toggleMenu() {
   toggleMenu.classList.toggle("active");
   navigation.classList.toggle("active");
 }
-// End of Navigation
 
 // Filter Cards per Category
 const filters_cat = document.querySelectorAll(".filter-btn");
@@ -91,3 +90,54 @@ var swiperProject = new Swiper(".project-slider", {
   },
 });
 // End of Swiper Slider 2
+
+//Get Date Function
+window.onload = function () {
+  const yearsInBusinessElement = document.getElementById("yearsInBusiness");
+  const currentYearElement = document.getElementById("currentYear");
+  const yearsExperienceElement = document.getElementById("yearsExperience");
+
+  const currentYear = new Date().getFullYear();
+  const startYear = 2013;
+  const yearsInBusiness = currentYear - startYear;
+  const yearsExperience = currentYear - startYear;
+
+  yearsInBusinessElement.textContent = yearsInBusiness;
+  currentYearElement.textContent = currentYear;
+  yearsExperienceElement.textContent = yearsExperience + " Years Experience";
+};
+// End of Get Date Function
+
+// Experience Animation
+const animatedNumberElements = document.querySelectorAll(".animated-number");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const from = parseInt(entry.target.getAttribute("data-from"));
+      const to = parseInt(entry.target.getAttribute("data-to"));
+      animateNumber(entry.target, from, to);
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+animatedNumberElements.forEach((element) => {
+  observer.observe(element);
+});
+
+function animateNumber(element, from, to) {
+  let current = from;
+  const step = Math.ceil(Math.abs(to - from) / 50);
+  const interval = setInterval(function () {
+    current += step;
+    element.textContent = current;
+
+    if (current >= to) {
+      element.textContent = to;
+      clearInterval(interval);
+    }
+  }, 20);
+}
+
+// End of Experience Animation

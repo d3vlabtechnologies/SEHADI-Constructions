@@ -380,25 +380,32 @@
     <!-- Experience Section -->
     <section class="experience row flex container">
       <div class="experience-cards row">
-        <div class="e-card">
-          <h1>60+</h1>
+        <div class="e-card plus">
+          <h1 class="animated-number" data-from="0" data-to="60">60</h1>
           <p>Happy Clients</p>
         </div>
-        <div class="e-card">
-          <h1>90+</h1>
+        <div class="e-card plus">
+          <h1 class="animated-number" data-from="0" data-to="90">90</h1>
           <p>Projects Completed</p>
         </div>
         <div class="e-card">
-          <h1>11</h1>
+          <h1 class="animated-number" data-from="0" data-to="11">11</h1>
           <p>Awards</p>
         </div>
         <div class="e-card">
-          <h1>10</h1>
+          <h1
+            id="yearsInBusiness"
+            class="animated-number"
+            data-from="0"
+            data-to="10"
+          >
+            10
+          </h1>
           <p>Years in Business</p>
         </div>
       </div>
       <div class="experience-content">
-        <h1>10 Years Experience</h1>
+        <h1 id="yearsExperience">10 Years Experience</h1>
         <p>
           Our Company has been the leading provider of construction services to
           clients in Ghana since 2013
@@ -707,8 +714,8 @@
       </div>
       <div class="copy-right">
         <div class="container">
-          <p>
-            Copyright 2023 &copy; Powered by
+          <p id="copyright">
+            Copyright <span id="currentYear"></span> &copy; Powered by
             <a href="https://www.d3vlabs.com"
               ><img
                 src="./images/devlabwhite.png"
